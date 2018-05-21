@@ -4,8 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    raise params[:name].inspect
-    if params[:name] == ""
+    if !params[:name] == ""
       session[:name] = params[:name]
       redirect_to '/'
     else
